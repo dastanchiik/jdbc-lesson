@@ -19,6 +19,6 @@ public class App {
         measures.setName("Adilet");
         measures.setAge(13);
         measures.setOwnCity("Bishkek");
-        measureRepository.saveCountry(measures);
+        System.out.println(measureRepository.saveCountry(measures));
     }
 }
