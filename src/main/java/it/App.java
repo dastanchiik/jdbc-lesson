@@ -14,11 +14,10 @@ import java.sql.SQLException;
  */
 public class App {
     public static void main(String[] args) throws SQLException {
-        MeasureRepository measureRepository = new MeasureRepository();
-        Measures measures = new Measures();
-        measures.setName("Adilet");
-        measures.setAge(13);
-        measures.setOwnCity("Bishkek");
-        System.out.println(measureRepository.saveCountry(measures));
+        CountryRepository repository = new CountryRepository();
+        Country country = new Country();
+        country.setTitle("Brazil");
+        country.setPopulation(898765434);
+        repository.saveCountry(country);
     }
 }
