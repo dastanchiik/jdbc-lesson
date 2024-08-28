@@ -4,10 +4,9 @@ import dataBase.Db;
 import model.Country;
 import model.Measures;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MeasureRepository {
     private final Connection connection;
@@ -41,5 +40,16 @@ public class MeasureRepository {
         statement.execute();
         statement.close();
         return "Siuuuuu";
+    }
+
+    public List<Measures> getAllCity() throws SQLException {
+        List<Measures> list = new ArrayList<>();
+        Statement st = connection.createStatement();
+        ResultSet resultSet = st.executeQuery("select * from measures");
+        while (resultSet.next()){
+            Measures measures = new Measures(resultSet.getLong("id"),resultSet.getString("name"),resultSet.getInt("age"),resultSet.getString("ownCity") );
+            list.add(measures);
+        }
+        return list;
     }
 }
