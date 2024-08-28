@@ -14,20 +14,8 @@ import java.sql.SQLException;
  */
 public class App {
     public static void main(String[] args) throws SQLException {
-        City city = new City();
-        city.setTitle("Roma");
-
-        City city1 = new City();
-        city1.setTitle("Madrid");
-
-        City city2 = new City();
-        city2.setTitle("Tokyo");
-
         CityRepository repository = new CityRepository();
-
-        repository.saveCity(city);
-        repository.saveCity(city1);
-        repository.saveCity(city2);
+        System.out.println(repository.getAllCity());
 
     }
 }
