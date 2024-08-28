@@ -1,9 +1,7 @@
 package dao;
 
 import dataBase.Db;
-import model.Country;
 import model.Measures;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
