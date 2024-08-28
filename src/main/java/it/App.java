@@ -30,6 +30,9 @@ public class App {
         measures2.setOwnCity("Antwerp");
 
         MeasureRepository repository = new MeasureRepository();
+        repository.saveCountry(measures);
+        repository.saveCountry(measures1);
+        repository.saveCountry(measures2);
 
     }
 }
