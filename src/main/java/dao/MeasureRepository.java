@@ -42,7 +42,7 @@ public class MeasureRepository {
         return "Siuuuuu";
     }
 
-    public List<Measures> getAllCity() throws SQLException {
+    public List<Measures> getAllMeasures() throws SQLException {
         List<Measures> list = new ArrayList<>();
         Statement st = connection.createStatement();
         ResultSet resultSet = st.executeQuery("select * from measures");
