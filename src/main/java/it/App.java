@@ -19,5 +19,16 @@ public class App {
         country.setTitle("Brazil");
         country.setPopulation(898765434);
         repository.saveCountry(country);
+        Country country1 = new Country();
+        country1.setTitle("Sweden");
+        country1.setPopulation(844752494);
+        repository.saveCountry(country1);
+
+        Country country2 = new Country();
+        country2.setTitle("Kanada");
+        country2.setPopulation(993715434);
+        repository.saveCountry(country2);
+//        System.out.println(repository.getAllCity());
+
     }
 }

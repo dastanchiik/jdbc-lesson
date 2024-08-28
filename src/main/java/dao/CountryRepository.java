@@ -1,6 +1,7 @@
 package dao;
 
 import dataBase.Db;
+import model.City;
 import model.Country;
 
 import java.io.InputStream;
@@ -8,7 +9,9 @@ import java.io.Reader;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class CountryRepository {
     private final Connection connection;
@@ -39,5 +42,16 @@ public class CountryRepository {
         statement.execute();
         statement.close();
         return "Siuuuuu";
+    }
+
+    public List<Country> getAllCity() throws SQLException {
+        List<Country> list = new ArrayList<>();
+        Statement st = connection.createStatement();
+        ResultSet resultSet = st.executeQuery("select * from countries");
+        while (resultSet.next()){
+            Country city = new Country(resultSet.getLong("id"),resultSet.getString("title"),resultSet.getInt("population") );
+            list.add(city);
+        }
+        return list;
     }
 }
